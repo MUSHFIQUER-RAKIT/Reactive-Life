@@ -10,9 +10,9 @@ function setupCatList() {
 }
 
 export default function CatFriends() {
+  
   const [catList, setCatList] = useState(setupCatList);
   const itemsRef = useRef(null);
-
   function scrollToCat(cat) {
     const map = getMap();
     const node = map.get(cat);
