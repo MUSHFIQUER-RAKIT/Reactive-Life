@@ -1,10 +1,10 @@
 import "./App.css";
-import CatFriends from "./Component/CatFriend";
+import SearchResults from "./SearchResults/SearchResults";
 
 function App() {
   return (
     <>
-      <CatFriends />
+      <SearchResults />
     </>
   );
 }
