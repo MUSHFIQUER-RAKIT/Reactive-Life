@@ -1,10 +1,11 @@
 import "./App.css";
-import CatFriends from "./Component/CatFriend";
+import Together from "./PutingItTogether/Together";
 
 function App() {
   return (
     <>
-      <CatFriends />
+      {/* <Comments postId={1} /> */}
+      <Together />
     </>
   );
 }
