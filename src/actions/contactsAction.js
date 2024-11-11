@@ -3,7 +3,7 @@ import { createContact, deleteContact, updateContact } from "../contacts";
 
 export async function createContactAction() {
   const contact = await createContact();
-  return { contact };
+  return redirect(`/contacts/${contact.id}/edit`);
 }
 export async function getContactAction({ request, params }) {
   const formData = await request.formData();
@@ -13,7 +13,12 @@ export async function getContactAction({ request, params }) {
 }
 
 export async function deleteContactAction({ params }) {
-  throw new Error("oh dang!");
   await deleteContact(params.contactId);
   return redirect("/");
+}
+export async function updateContactFav({ request, params }) {
+  const formData = await request.formData();
+  return updateContact(params.contactId, {
+    favorite: formData.get("favorite") === "true",
+  });
 }
